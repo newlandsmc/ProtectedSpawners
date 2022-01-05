@@ -67,7 +67,7 @@ bukkit {
     website = "https://github.com/SemiVanilla-MC/ProtectedSpawners"
     authors = listOf("destro174")
     commands {
-        create("breakprotectedblock") {
+        create("confirm") {
             description = "Allows the player to break a block that's protected by this plugin."
             usage = "/breakprotectedblock"
             permission = "breakprotectedblock.use"

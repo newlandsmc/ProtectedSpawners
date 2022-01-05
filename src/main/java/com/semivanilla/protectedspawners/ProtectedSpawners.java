@@ -16,7 +16,7 @@ public class ProtectedSpawners extends JavaPlugin {
         Config.init();
 
         registerListener(new BlockBreakListener(instance));
-        getCommand("breakprotectedblock").setExecutor(new BreakBlockCommand());
+        getCommand("confirm").setExecutor(new BreakBlockCommand());
     }
 
     @Override
