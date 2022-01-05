@@ -70,7 +70,7 @@ bukkit {
         create("confirm") {
             description = "Allows the player to break a block that's protected by this plugin."
             usage = "/breakprotectedblock"
-            permission = "breakprotectedblock.use"
+            permission = "protectedspawners.confirm"
         }
     }
 }
