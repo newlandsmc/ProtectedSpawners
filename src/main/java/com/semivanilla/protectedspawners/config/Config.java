@@ -110,11 +110,15 @@ public class Config {
     /** ONLY EDIT BELOW THIS LINE **/
     public static boolean preventMinecartChest = false;
     public static String blockBreakMessage = "<red>You can't break this block, to break it do /<command> and break this block";
+    public static String commandTimeOutMessage = "<red>Timed out, rerun /<command> to break protected blocks";
+    public static String commandBreakMessage = "<red>You can now break protected blocks.";
     public static List<String> lootableMaterials = new ArrayList<>(){{add("CHEST");add("SPAWNER");}};
     public static int commandTimeOut = 300;
     private static void blockSettings() {
         preventMinecartChest = getBoolean("enabled.minecartchest", preventMinecartChest);
         blockBreakMessage = getString("messages.break-block-failed", blockBreakMessage);
+        commandBreakMessage = getString("messages.player-command-can-break", commandBreakMessage);
+        commandTimeOutMessage = getString("messages.player-command-time-out", commandTimeOutMessage);
         lootableMaterials = getList("materials-enabled", lootableMaterials);
         commandTimeOut = getInt("command-time-out", commandTimeOut);
     }

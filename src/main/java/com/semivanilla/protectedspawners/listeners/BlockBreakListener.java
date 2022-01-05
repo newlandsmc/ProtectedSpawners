@@ -59,7 +59,8 @@ public class BlockBreakListener implements Listener {
         }
 
         event.setCancelled(true);
-        player.sendMessage(Util.parseMiniMessage(Config.blockBreakMessage, null));
+        if (!Config.blockBreakMessage.isEmpty())
+            player.sendMessage(Util.parseMiniMessage(Config.blockBreakMessage, null));
     }
 
     private boolean unbreakable(Block block) {
