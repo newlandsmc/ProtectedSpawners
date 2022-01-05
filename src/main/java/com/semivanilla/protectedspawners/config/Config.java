@@ -109,8 +109,8 @@ public class Config {
 
     /** ONLY EDIT BELOW THIS LINE **/
     public static boolean preventMinecartChest = false;
-    public static String blockBreakMessage = "<red>You can't break this block, to break it do /<command> and break this block";
-    public static String commandTimeOutMessage = "<red>Timed out, rerun /<command> to break protected blocks";
+    public static String blockBreakMessage = "<red>You can't break this block, to break it do /confirm and break this block";
+    public static String commandTimeOutMessage = "<red>Timed out, rerun /confirm to break protected blocks";
     public static String commandBreakMessage = "<red>You can now break protected blocks.";
     public static List<String> lootableMaterials = new ArrayList<>(){{add("CHEST");add("SPAWNER");}};
     public static int commandTimeOut = 300;
