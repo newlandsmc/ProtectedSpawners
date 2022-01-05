@@ -5,6 +5,7 @@ import com.semivanilla.protectedspawners.config.Config;
 import com.semivanilla.protectedspawners.util.Util;
 import it.unimi.dsi.fastutil.objects.Object2BooleanMap;
 import it.unimi.dsi.fastutil.objects.Object2BooleanOpenHashMap;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -52,10 +53,9 @@ public class BlockBreakListener implements Listener {
             return;
         }
 
-        if (block instanceof Lootable lootable) {
+        if (block.getState() instanceof Lootable lootable) {
             // covers the following : CHEST, DISPENSER, DROPPER, HOPPER, SHULKERBOX
-            LootTable lootTable = lootable.getLootTable();
-            if (lootTable == null) return;
+            if (!lootable.hasLootTable()) return;
         }
 
         event.setCancelled(true);
