@@ -3,7 +3,7 @@ import com.github.jengelman.gradle.plugins.shadow.tasks.ConfigureShadowRelocatio
 plugins {
     id("java")
     id("com.github.johnrengelman.shadow") version "7.1.0"
-    id("io.papermc.paperweight.userdev") version "1.3.3"
+//    id("io.papermc.paperweight.userdev") version "1.3.3"
     id("net.minecrell.plugin-yml.bukkit") version "0.5.1"
     id("xyz.jpenilla.run-paper") version "1.0.6"
 }
@@ -13,7 +13,7 @@ version = "1.0.0-SNAPSHOT"
 description = "Discourage players from breaking natural loot chests and spawners by increasing how much time it takes to break them. "
 
 dependencies {
-    paperDevBundle("1.18.1-R0.1-SNAPSHOT")
+//    paperDevBundle("1.18.1-R0.1-SNAPSHOT")
     compileOnly("io.papermc.paper:paper-api:1.18.1-R0.1-SNAPSHOT") // Paper
     shadow("net.kyori:adventure-text-minimessage:4.2.0-SNAPSHOT") { // Minimessage
         exclude("net.kyori", "adventure-api")
@@ -22,9 +22,9 @@ dependencies {
 
 tasks {
 
-    assemble {
-        dependsOn(reobfJar)
-    }
+//    assemble {
+//        dependsOn(reobfJar)
+//    }
 
     compileJava {
         options.encoding = Charsets.UTF_8.name()
