@@ -24,7 +24,6 @@ public class Config {
     public static YamlConfiguration config;
 
     static int version;
-    static boolean verbose;
 
     public static void init() {
         CONFIG_PATH = ProtectedSpawners.getInstance().getDataFolder();
@@ -39,17 +38,10 @@ public class Config {
         }
         config.options().header(HEADER);
         config.options().copyDefaults(true);
-        verbose = getBoolean("verbose", false);
 
         version = getInt("config-version", 1);
 
         readConfig(Config.class, null);
-    }
-
-    protected static void log(String s) {
-        if (verbose) {
-            log(Level.INFO, s);
-        }
     }
 
     static void readConfig(Class<?> clazz, Object instance) {
@@ -109,12 +101,14 @@ public class Config {
 
     /** ONLY EDIT BELOW THIS LINE **/
     public static boolean preventMinecartChest = false;
+    public static boolean preventLootChest = false;
     public static String blockBreakMessage = "<red>You can't break this block, to break it do /confirm and break this block";
     public static String commandTimeOutMessage = "<red>Timed out, rerun /confirm to break protected blocks";
     public static String commandBreakMessage = "<red>You can now break protected blocks.";
     public static List<String> lootableMaterials = new ArrayList<>(){{add("CHEST");add("SPAWNER");}};
     public static int commandTimeOut = 300;
     private static void blockSettings() {
+        preventMinecartChest = getBoolean("enabled.minecartchest", preventMinecartChest);
         preventMinecartChest = getBoolean("enabled.minecartchest", preventMinecartChest);
         blockBreakMessage = getString("messages.break-block-failed", blockBreakMessage);
         commandBreakMessage = getString("messages.player-command-can-break", commandBreakMessage);
